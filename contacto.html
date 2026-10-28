@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dirección, horario y contacto de Librería Avalón, con mapa y ruta para llegar.">
+    <title>Contacto | Librería Avalón</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css"
+        integrity="sha256-cu3EeyAbdh7FZ58X4+oQz2g30Tw/U+3Utqmr1ETODqQ="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <a href="index.html" class="logo">Librería Avalón</a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="presupuesto.html">Presupuesto</a></li>
+                <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contacto</h1>
+        <p>Visítanos en la librería o escríbenos. Y si quieres saber cómo llegar, calcula la ruta desde tu ubicación en el mapa.</p>
+
+        <div class="contacto-grid">
+            <section>
+                <h2>Dónde estamos</h2>
+                <address>
+                    <strong>Librería Avalón</strong><br>
+                    Museo Plaza, Artetxe Kondearen Zumarkalea, 2<br>
+                    Abando, 48009 Bilbao, Bizkaia<br>
+                    Teléfono: +34 944 000 000<br>
+                    Correo: <a href="mailto:hola@libreriaavalon.example">hola@libreriaavalon.example</a>
+                </address>
+            </section>
+
+            <section>
+                <h2>Horario</h2>
+                <table class="horario">
+                    <caption class="solo-lectores">Horario de apertura de la librería</caption>
+                    <tbody>
+                        <tr><th scope="row">Lunes a viernes</th><td>10:00–14:00 y 17:00–20:30</td></tr>
+                        <tr><th scope="row">Sábados</th><td>10:00–14:00</td></tr>
+                        <tr><th scope="row">Domingos y festivos</th><td>Cerrado</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <section class="como-llegar">
+            <h2>Cómo llegar</h2>
+            <p>Pulsa el botón para calcular la ruta desde tu ubicación. También puedes hacer clic en el mapa para elegir tu punto de partida.</p>
+            <button type="button" id="botonRuta" class="boton">Calcular ruta desde mi ubicación</button>
+            <p id="estadoRuta" class="estado-ruta" role="status"></p>
+            <div id="mapa" role="region" aria-label="Mapa interactivo con la ubicación de Librería Avalón"></div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="pie-contenido">
+            <nav aria-label="Redes sociales">
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/instagram.svg" alt="Instagram de Librería Avalón" width="28" height="28">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/facebook.svg" alt="Facebook de Librería Avalón" width="28" height="28"></a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/x.svg" alt="X (Twitter) de Librería Avalón" width="28" height="28">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <address>
+                Librería Avalón<br>
+                Museo Plaza, Artetxe Kondearen Zumarkalea, 2<br>
+                Abando, 48009 Bilbao, Bizkaia   
+            </address>
+
+            <details class="aviso-legal">
+                <summary>Aviso legal</summary>
+                <p><strong>Titular:</strong> Librería Avalón, con domicilio en Museo Plaza, Artetxe Kondearen Zumarkalea, 2, 48009 Bilbao (Bizkaia).</p>
+                <p><strong>Objeto:</strong> este sitio web ofrece información sobre los packs de lectura, las novedades y el club de lectura de la librería.</p>
+                <p><strong>Propiedad intelectual:</strong> los textos, imágenes y diseño de la web pertenecen a sus autores. No se permite su reproducción sin autorización.</p>
+                <p><strong>Responsabilidad:</strong> la librería procura que la información sea correcta y esté actualizada, pero no garantiza la ausencia de errores ni se responsabiliza del uso que se haga de ella.</p>
+                <p><strong>Legislación aplicable:</strong> este aviso se rige por la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico.</p>
+                <p><strong>Nota:</strong> Librería Avalón es un negocio ficticio creado como proyecto formativo.</p>
+            </details>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"
+        integrity="sha256-W+ggQ0MIhtG5LaUrBTtRqUFHT0m9MnTVJqej3K2Pz2A="
+        crossorigin="anonymous"></script>
+    <script src="js/mapa.js"></script>
+</body>
+</html>

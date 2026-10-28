@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcula al instante el presupuesto de tu pack de lectura en Librería Avalón.">
+    <title>Presupuesto | Librería Avalón</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <a href="index.html" class="logo">Librería Avalón</a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="presupuesto.html" aria-current="page">Presupuesto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Solicita tu presupuesto</h1>
+        <p>Rellena tus datos, elige tu pack y el plazo de entrega, y el presupuesto se calculará al instante.</p>
+        <form id="formPresupuesto" class="formulario" novalidate>
+
+            <fieldset>
+                <legend>Datos de Contacto</legend>
+                
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" autocomplete="given-name" maxlength="15" aria-describedby="errorNombre">
+                <span class="error" id="errorNombre"></span>
+                
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos" autocomplete="family-name" maxlength="40" aria-describedby="errorApellidos">
+                <span class="error" id="errorApellidos"></span>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono" autocomplete="tel" inputmode="numeric" maxlength="9" aria-describedby="errorTelefono">
+                <span class="error" id="errorTelefono"></span>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" name="email" id="email" autocomplete="email" aria-describedby="errorEmail">
+                <span class="error" id="errorEmail"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Tu presupuesto</legend>
+
+                <label for="producto">Producto</label>
+                <select name="producto" id="producto" aria-describedby="errorProducto">
+                    <option value="0">Elige un pack</option>
+                    <option value="45">Pack Novela (45 €)</option>
+                    <option value="60">Pack Clásicos (60 €)</option>
+                    <option value="55">Pack Infantil (55 €)</option>
+                </select>
+                <span class="error" id="errorProducto"></span>
+
+                <label for="plazo">Plazo de entrega (meses)</label>
+                <input type="number" name="plazo" id="plazo" min="1" max="12" step="1" value="1" aria-describedby="ayudaPlazo errorPlazo">
+                <span class="ayuda" id="ayudaPlazo">Descuento del 5% desde 3 meses y del 10% desde 6 meses.</span>
+                <span class="error" id="errorPlazo"></span>
+
+                <fieldset class="extras">
+                    <legend>Extras</legend>
+                    <label><input type="checkbox" name="extra" value="5"> Envoltorio de regalo (+5 €)</label>
+                    <label><input type="checkbox" name="extra" value="3"> Dedicatoria (+3 €)</label>
+                    <label><input type="checkbox" name="extra" value="4"> Marcapáginas (+4 €)</label>
+                    <label><input type="checkbox" name="extra" value="8"> Envío exprés (+8 €)</label>
+                </fieldset>
+
+                <p class="total">Presupuesto final: <output id="total">0.00</output> €</p>
+            </fieldset>
+
+            <label class="condiciones">
+                <input type="checkbox" name="condiciones" id="condiciones" aria-describedby="errorCondiciones"> Acepto la política de privacidad</label>
+            <span class="error" id="errorCondiciones"></span>
+
+            <div class="acciones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar</button>
+            </div>
+
+            <p id="mensajeEnvio" class="confirmacion" role="status"></p>
+        </form>
+    </main>
+    <footer class="pie">
+        <div class="pie-contenido">
+            <nav aria-label="Redes sociales">
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/instagram.svg" alt="Instagram de Librería Avalón" width="28" height="28">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/facebook.svg" alt="Facebook de Librería Avalón" width="28" height="28">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/x.svg" alt="X (Twitter) de Librería Avalón" width="28" height="28">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <address>
+                Librería Avalón<br>
+                Museo Plaza, Artetxe Kondearen Zumarkalea, 2<br>
+                Abando, 48009 Bilbao, Bizkaia
+            </address>
+
+            <details class="aviso-legal">
+                <summary>Aviso legal</summary>
+                <p><strong>Titular:</strong> Librería Avalón, con domicilio en Museo Plaza, Artetxe Kondearen Zumarkalea, 2, 48009 Bilbao (Bizkaia).</p>
+                <p><strong>Objeto:</strong> este sitio web ofrece información sobre los packs de lectura, las novedades y el club de lectura de la librería.</p>
+                <p><strong>Propiedad intelectual:</strong> los textos, imágenes y diseño de la web pertenecen a sus autores. No se permite su reproducción sin autorización.</p>
+                <p><strong>Responsabilidad:</strong> la librería procura que la información sea correcta y esté actualizada, pero no garantiza la ausencia de errores ni se responsabiliza del uso que se haga de ella.</p>
+                <p><strong>Legislación aplicable:</strong> este aviso se rige por la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico.</p>
+                <p><strong>Nota:</strong> Librería Avalón es un negocio ficticio creado como proyecto formativo.</p>
+            </details>
+        </div>
+    </footer>
+
+    <script src="js/presupuesto.js"></script>
+</body>
+</html>

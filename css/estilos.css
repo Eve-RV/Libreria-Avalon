@@ -1,0 +1,587 @@
+:root {
+    --verde: #1f4d3a;
+    --dorado: #c9a227;
+    --blanco: #ffffff;
+    --negro: #1a1a1a;
+    --rojo: #b42318;
+
+    --fuente-titulos: Georgia, "Times New Roman", serif;
+    --fuente-texto: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+    line-height: 1.6;
+    color: var(--negro);
+    background: var(--blanco);
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--verde);
+    line-height: 1.2;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+.cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--verde);
+}
+
+.logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dorado);
+    text-decoration: none;
+}
+
+.cabecera nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cabecera nav a {
+    display: inline-block;
+    padding: 0.25rem 0;
+    color: var(--blanco);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+.cabecera nav a:hover {
+    border-bottom-color: var(--blanco);
+}
+
+.cabecera nav a[aria-current="page"] {
+    border-bottom-color: var(--dorado);
+    font-weight: bold;
+}
+
+.cabecera a:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+.pie {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--verde);
+    color: var(--blanco);
+}
+
+.pie-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pie nav ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pie nav a {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.pie nav a:hover {
+    transform: scale(1.15);
+}
+
+.pie a:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 4px;
+}
+
+.pie address {
+    font-style: normal;
+    line-height: 1.5;
+}
+
+.aviso-legal {
+    flex-basis: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid var(--dorado);
+    font-size: 0.9rem;
+}
+
+.aviso-legal summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.aviso-legal summary:hover {
+    text-decoration: underline;
+}
+
+.aviso-legal summary:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 4px;
+}
+
+.aviso-legal p {
+    max-width: 70ch; 
+}
+
+main section + section {
+    margin-top: 3rem; /* separación entre secciones */
+}
+
+.portada {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid var(--dorado);
+}
+
+.portada h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.5rem;
+}
+
+.lema {
+    font-family: var(--fuente-titulos);
+    font-size: 1.3rem;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--verde);
+    color: var(--blanco);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.boton:hover {
+    background: var(--dorado);
+    color: var(--negro);
+}
+
+.boton:focus-visible {
+    outline: 2px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.pack, .noticia {
+    padding: 1.25rem;
+    border: 1px solid var(--verde);
+    border-top: 4px solid var(--dorado);
+    border-radius: 4px;
+}
+
+.pack h3,  .noticia h3 {
+    margin-top: 0;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.noticia time {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.nota {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.pasos {
+    max-width: 70ch;
+    padding-left: 1.25rem;
+}
+
+.pasos li {
+    margin-bottom: 0.75rem;
+}
+
+.formulario {
+    max-width: 640px;
+}
+
+.formulario fieldset {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.25rem 1.25rem;
+    border: 1px solid var(--verde);
+    border-radius: 4px;
+}
+
+.formulario legend {
+    padding: 0 0.5rem;
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.formulario label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.formulario input[type="text"], .formulario input[type="tel"], .formulario input[type="email"], .formulario input[type="number"], .formulario select {
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.6rem 0.75rem;
+    font: inherit;
+    border: 1px solid var(--verde);
+    border-radius: 4px;
+}
+
+.formulario input:focus-visible, .formulario select:focus-visible, .formulario button:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 2px;
+}
+
+.formulario [aria-invalid="true"] {
+    border-color: var(--rojo);
+}
+
+.formulario button {
+    cursor: pointer;
+}
+
+.formulario .extras label, .formulario .condiciones {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+}
+
+.formulario .extras {
+    margin-top: 1.25rem;
+}
+
+.ayuda {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+}
+
+.error {
+    display: block;
+    min-height: 0;
+    margin-top: 0.2rem;
+    color: var(--rojo);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.total {
+    margin: 1.5rem 0 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+button.boton {
+    border: 2px solid var(--verde);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-secundario {
+    background: var(--blanco);
+    color: var(--verde);
+}
+
+.confirmacion {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--verde);
+    border-left-width: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.confirmacion:empty {
+    display: none;
+}
+
+/*Galería*/
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.filtro {
+    padding: 0.5rem 1.25rem;
+    font: inherit;
+    font-weight: bold;
+    color: var(--verde);
+    background: var(--blanco);
+    border: 2px solid var(--verde);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.filtro[aria-pressed="true"] {
+    color: var(--blanco);
+    background: var(--verde);
+}
+
+.filtro:hover {
+    color: var(--negro);
+    background: var(--dorado);
+    border-color: var(--dorado);
+}
+
+.filtro:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 2px;
+}
+
+.galeria {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.galeria-item {
+    margin: 0; 
+}
+
+.miniatura {
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background: none;
+    border: 0;
+    border-radius: 4px;
+    cursor: zoom-in;
+}
+
+.miniatura img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.miniatura:hover img {
+    transform: scale(1.05);
+}
+
+.miniatura:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+.galeria-item figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/*imágenes filtradas*/
+.oculta {
+    display: none;
+}
+
+.visor {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000; /* por encima de la cabecera (1000) */
+    background: rgba(26, 26, 26, 0.92);
+}
+
+.visor-figura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    margin: 0;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.visor-figura img {
+    display: block;
+    max-width: 90vw;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.visor-figura figcaption {
+    margin-top: 0.75rem;
+}
+
+.visor-boton {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--blanco);
+    background: var(--verde);
+    border: 2px solid var(--blanco);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.visor-boton:hover {
+    color: var(--negro);
+    background: var(--dorado);
+}
+
+.visor-boton:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 3px;
+}
+
+.visor-cerrar {
+    top: 1rem;
+    right: 1rem;
+}
+
+.visor-anterior, .visor-siguiente {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.visor-anterior {
+    left: 1rem;
+}
+
+.visor-siguiente {
+    right: 1rem;
+}
+
+body.visor-abierto {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .visor-anterior, .visor-siguiente {
+        top: auto;
+        bottom: 1rem;
+        transform: none;
+    }
+
+    .visor-anterior {
+        left: calc(50% - 3.5rem);
+    }
+
+    .visor-siguiente {
+        right: calc(50% - 3.5rem);
+    }
+}
+
+/*contacto y mapa*/
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.contacto-grid address {
+    line-height: 1.8;
+}
+
+.contacto-grid a {
+    color: var(--verde);
+    font-weight: bold;
+}
+
+.horario {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.horario th, .horario td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--verde);
+}
+
+.como-llegar {
+    margin-top: 3rem;
+}
+
+.estado-ruta {
+    min-height: 1.6em; 
+    font-weight: bold;
+    color: var(--verde);
+}
+
+#mapa {
+    position: relative;
+    z-index: 0;
+    height: 420px;
+    border: 2px solid var(--verde);
+    border-radius: 4px;
+}
+
+.leaflet-routing-container {
+    max-width: 80vw;
+}

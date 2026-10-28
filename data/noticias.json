@@ -1,0 +1,28 @@
+{
+    "noticias": [
+        {
+            "id": 1,
+            "titulo": "Presentación de la novela del mes",
+            "fecha": "2026-11-05",
+            "resumen": "Recibimos a la autora para una charla y firma de ejemplares en la librería. Entrada libre hasta completar aforo."
+        },
+        {
+            "id": 2,
+            "titulo": "Horario especial por la campaña de Navidad",
+            "fecha": "2026-11-20",
+            "resumen": "Durante diciembre ampliamos el horario de tarde. Consulta los días exactos en la página de contacto."
+        },
+        {
+            "id": 3,
+            "titulo": "Nuevo Pack Infantil de cinco libros",
+            "fecha": "2026-11-28",
+            "resumen": "Estrenamos un pack pensado para primeros lectores, con cuentos ilustrados y libros de actividades."
+        },
+        {
+            "id": 4,
+            "titulo": "Arranca el club de lectura de invierno",
+            "fecha": "2026-12-03",
+            "resumen": "Nos reunimos cada primer jueves de mes para comentar un clásico. Las plazas son limitadas."
+        }
+    ]
+}
