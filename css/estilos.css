@@ -15,6 +15,10 @@
 
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     font-family: var(--fuente-texto);
     line-height: 1.6;
     color: var(--negro);
@@ -28,6 +32,8 @@ h1, h2, h3 {
 }
 
 main {
+    flex: 1;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     padding: 1.5rem;

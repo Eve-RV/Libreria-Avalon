@@ -182,7 +182,15 @@ formulario.addEventListener("submit", (evento) => {
         validarCondiciones()
     ].every(Boolean);
 
-    if (formularioValido) mostrarConfirmacion();
+    if (formularioValido) {
+        mostrarConfirmacion();
+        const confirmacion = mensajeEnvio.textContent;
+        formulario.reset();
+        
+        setTimeout(() => {
+            mensajeEnvio.textContent = confirmacion;
+        })
+    }
     else {
         const primerCampoInvalido = formulario.querySelector('[aria-invalid="true"]');
         if (primerCampoInvalido) primerCampoInvalido.focus();
